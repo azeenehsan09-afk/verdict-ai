@@ -1,11 +1,16 @@
 
+const API_BASE_URL = "https://zeni123.pythonanywhere.com";
+
 const decisionForm = document.getElementById("decision-form");
 const decisionInput = document.getElementById("decision-input");
 const courtroom = document.getElementById("courtroom");
 
 const submitButton = decisionForm.querySelector("button");
 
-// Handle form submission
+// ===================================
+// INITIAL DECISION ANALYSIS
+// ===================================
+
 decisionForm.addEventListener("submit", async function(event) {
 
     event.preventDefault();
@@ -47,16 +52,20 @@ decisionForm.addEventListener("submit", async function(event) {
     document.getElementById("confidence-value").textContent = "0%";
     document.getElementById("confidence-fill").style.width = "0%";
 
-    // Clear previous appeal
+    // Clear previous appeal and final reflection
     document.getElementById("appeal-result").innerHTML = "";
     document.getElementById("appeal-input").value = "";
+
+    document.getElementById("final-reflection").hidden = true;
+    document.getElementById("final-result").hidden = true;
+    document.getElementById("final-answer").value = "";
 
     submitButton.disabled = true;
     submitButton.textContent = "Analyzing Decision...";
 
     try {
 
-        const response = await fetch("http://127.0.0.1:5000/analyze", {
+        const response = await fetch(`${API_BASE_URL}/analyze`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -194,7 +203,7 @@ appealButton.addEventListener("click", async function() {
 
     try {
 
-        const response = await fetch("http://127.0.0.1:5000/appeal", {
+        const response = await fetch(`${API_BASE_URL}/appeal`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -223,7 +232,7 @@ appealButton.addEventListener("click", async function() {
         const heading = document.createElement("h3");
         heading.textContent = "⚖ The Judge — Reconsideration";
 
-        // Verdict box: same structure as original Judge
+        // Verdict box
         const verdictBox = document.createElement("div");
         verdictBox.className = "verdict-result";
 
@@ -287,18 +296,20 @@ appealButton.addEventListener("click", async function() {
         );
 
         appealResult.appendChild(card);
-// Show the final reflection section after the appeal
-const finalReflection = document.getElementById("final-reflection");
-const finalQuestion = document.getElementById("final-question");
 
-finalQuestion.textContent = result.overlooked_question;
+        // Show the final reflection section after the appeal
+        const finalReflection = document.getElementById("final-reflection");
+        const finalQuestion = document.getElementById("final-question");
 
-finalReflection.hidden = false;
+        finalQuestion.textContent = result.overlooked_question;
 
-finalReflection.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-});
+        finalReflection.hidden = false;
+
+        finalReflection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
         appealResult.scrollIntoView({
             behavior: "smooth",
             block: "center"
@@ -317,6 +328,7 @@ finalReflection.scrollIntoView({
     }
 
 });
+
 
 // ===================================
 // FINAL VERDICT ROUND
@@ -363,7 +375,7 @@ finalForm.addEventListener("submit", async function(event) {
 
     try {
 
-        const response = await fetch("http://127.0.0.1:5000/finalize", {
+        const response = await fetch(`${API_BASE_URL}/finalize`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
