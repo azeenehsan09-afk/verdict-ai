@@ -1,0 +1,1190 @@
+
+/* =========================================
+   VERDICT — AI DECISION COURTROOM
+   Complete stylesheet
+========================================= */
+
+/* 1. GLOBAL STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --midnight: #080F1F;
+    --navy: #11172B;
+    --navy-light: #17152F;
+
+    --purple: #7656E8;
+    --purple-light: #A78BFA;
+    --lavender: #C4B5FD;
+
+    --white: #E8EDF5;
+    --text: #D4D4E0;
+    --muted: #A8A5BC;
+
+    --border: rgba(167, 139, 250, 0.2);
+    --surface: rgba(255, 255, 255, 0.04);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--midnight);
+    color: var(--white);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    transition: 0.3s ease;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* 2. NAVIGATION */
+
+header {
+    background: rgba(8, 15, 31, 0.96);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1250px;
+    margin: auto;
+    padding: 18px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--purple-light);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: var(--lavender);
+}
+
+.nav-button {
+    padding: 10px 20px;
+    background: var(--purple);
+    color: white;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--purple-light);
+    transform: translateY(-2px);
+}
+
+
+/* 3. HERO SECTION */
+
+.hero {
+    min-height: 570px;
+    padding: 110px 9%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(118, 86, 232, 0.2),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #080F1F, #11172B 65%, #1A1740);
+}
+
+.tagline,
+.section-tag {
+    color: var(--purple-light);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    max-width: 850px;
+    color: var(--white);
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--lavender);
+}
+
+.hero-description {
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 17px;
+    margin-bottom: 32px;
+}
+
+.primary-button {
+    display: inline-block;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 9px;
+
+    background: linear-gradient(
+        100deg,
+        var(--purple),
+        #9878F5
+    );
+
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(118, 86, 232, 0.3);
+}
+
+
+/* 4. HOW IT WORKS */
+
+.how-it-works {
+    padding: 85px 7%;
+    text-align: center;
+    background: #0C1325;
+}
+
+.how-it-works h2,
+.about-section h2 {
+    color: var(--white);
+    font-size: clamp(28px, 4vw, 38px);
+    margin-bottom: 12px;
+}
+
+.section-description {
+    color: var(--muted);
+    margin-bottom: 40px;
+}
+
+.steps-container {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.step-card {
+    padding: 30px;
+    text-align: left;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    transition: 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--purple-light);
+}
+
+.step-number {
+    display: inline-block;
+    color: var(--purple-light);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.step-card h3 {
+    color: var(--white);
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.step-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* 5. DECISION INPUT SECTION */
+
+.decision-section {
+    padding: 90px 7%;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(118, 86, 232, 0.12),
+            transparent 55%
+        ),
+        var(--midnight);
+}
+
+.section-heading {
+    max-width: 750px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    color: var(--white);
+    font-size: clamp(27px, 4vw, 38px);
+    margin-bottom: 12px;
+}
+
+.section-heading > p:not(.tagline) {
+    color: var(--muted);
+}
+
+#decision-form {
+    max-width: 800px;
+    margin: auto;
+    padding: 25px;
+
+    background: var(--navy);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+#decision-input {
+    display: block;
+    width: 100%;
+    min-height: 150px;
+    resize: vertical;
+
+    padding: 18px;
+    margin-bottom: 20px;
+
+    color: var(--white);
+    background: var(--midnight);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    outline: none;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+#decision-input::placeholder,
+#appeal-input::placeholder {
+    color: #77758F;
+}
+
+#decision-input:focus,
+#appeal-input:focus {
+    border-color: var(--purple-light);
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.08);
+}
+
+#decision-form button {
+    width: 100%;
+}
+
+#decision-form button:disabled,
+#appeal-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* 6. COURTROOM SECTION */
+
+.courtroom-section {
+    display: none;
+    padding: 85px 7%;
+    background: #0C1325;
+}
+
+.courtroom-section.active {
+    display: block;
+    animation: sectionReveal 0.6s ease;
+}
+
+@keyframes sectionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#submitted-decision {
+    margin-top: 12px;
+    color: var(--lavender);
+    font-style: italic;
+}
+
+
+/* 7. AI PERSONA CARDS */
+
+.personas {
+    max-width: 1250px;
+    margin: 40px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: start;
+}
+
+.persona-card {
+    min-width: 0;
+    padding: 28px;
+
+    background: linear-gradient(145deg, #151C32, #101629);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    transition: 0.3s ease;
+}
+
+.persona-card:hover {
+    border-color: rgba(167, 139, 250, 0.45);
+    transform: translateY(-3px);
+}
+
+.persona-icon {
+    display: inline-block;
+    color: var(--purple-light);
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.persona-card h3 {
+    color: var(--white);
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.persona-card > p,
+.persona-heading p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.persona-response {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+
+/* 8. JUDGE CARD */
+
+.judge-card {
+    grid-column: 1 / -1;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(118, 86, 232, 0.16),
+            transparent 40%
+        ),
+        linear-gradient(145deg, #17152F, #101629);
+
+    border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.persona-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.persona-heading .persona-icon {
+    font-size: 35px;
+    margin: 0;
+}
+
+.persona-heading h3 {
+    margin: 0;
+}
+
+.persona-heading p {
+    margin: 0;
+}
+
+.verdict-result {
+    margin: 25px 0;
+    padding: 28px;
+
+    text-align: center;
+    background: rgba(118, 86, 232, 0.1);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 14px;
+}
+
+.verdict-label {
+    color: var(--purple-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#verdict-decision {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 15px;
+
+    color: var(--lavender);
+    font-size: clamp(20px, 4vw, 29px);
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    border-radius: 9px;
+}
+
+
+/* VERDICT STATUS COLORS */
+
+.verdict-proceed {
+    color: #4ADE80 !important;
+    background: rgba(74, 222, 128, 0.12);
+    border: 1px solid rgba(74, 222, 128, 0.4);
+}
+
+.verdict-caution {
+    color: #C4B5FD !important;
+    background: rgba(167, 139, 250, 0.13);
+    border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.verdict-reconsider {
+    color: #F87171 !important;
+    background: rgba(248, 113, 113, 0.12);
+    border: 1px solid rgba(248, 113, 113, 0.4);
+}
+
+
+/* JUDGE DETAILS */
+
+.judge-detail {
+    margin-top: 20px;
+    padding: 22px;
+
+    background: var(--surface);
+    border-radius: 12px;
+    border-left: 3px solid var(--purple);
+}
+
+.judge-detail h4 {
+    color: var(--lavender);
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.judge-detail p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+.question-box {
+    border-left-color: var(--purple-light);
+}
+
+
+/* CONFIDENCE */
+
+.confidence-section {
+    margin-top: 25px;
+}
+
+.confidence-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.confidence-heading h4 {
+    color: var(--white);
+    font-size: 14px;
+}
+
+#confidence-value {
+    color: var(--lavender);
+    font-weight: bold;
+}
+
+.confidence-bar {
+    width: 100%;
+    height: 9px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#confidence-fill {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--purple), var(--purple-light));
+    border-radius: 20px;
+    transition: width 0.8s ease;
+}
+
+
+/* 9. WHAT WOULD CHANGE THE VERDICT */
+
+.change-box {
+    max-width: 1250px;
+    margin: 20px auto;
+}
+
+#verdict-changes {
+    padding-left: 22px;
+    color: var(--text);
+}
+
+#verdict-changes li {
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+
+/* 10. APPEAL SECTION */
+
+.appeal-section {
+    max-width: 1250px;
+    margin: 45px auto 0;
+    padding: 32px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(118, 86, 232, 0.13),
+            transparent 45%
+        ),
+        #11172B;
+
+    border: 1px solid rgba(167, 139, 250, 0.35);
+    border-radius: 18px;
+}
+
+.appeal-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.appeal-icon {
+    color: var(--purple-light);
+    font-size: 28px;
+}
+
+.appeal-heading h3 {
+    color: var(--white);
+    font-size: 22px;
+}
+
+.appeal-description {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 12px 0 22px;
+}
+
+#appeal-input {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+
+    padding: 16px;
+
+    color: var(--white);
+    background: var(--midnight);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+#appeal-button {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 13px 23px;
+
+    color: white;
+    background: linear-gradient(100deg, var(--purple), #9878F5);
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#appeal-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(118, 86, 232, 0.25);
+}
+
+
+/* 11. REVISED VERDICT — SECOND HEARING */
+
+#appeal-result {
+    margin-top: 25px;
+}
+
+.revised-verdict-card {
+    position: relative;
+    overflow: hidden;
+
+    margin-top: 25px;
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(118, 86, 232, 0.2),
+            transparent 45%
+        ),
+        linear-gradient(145deg, #17152F, #0B1020);
+
+    border: 1px solid rgba(167, 139, 250, 0.4);
+    border-radius: 18px;
+
+    animation: hearingReveal 0.65s ease;
+}
+
+@keyframes hearingReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.revised-verdict-card::before {
+    content: "SECOND HEARING";
+
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 7px 13px;
+
+    color: var(--lavender);
+    background: rgba(118, 86, 232, 0.14);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* APPEAL STATUS */
+
+.appeal-status {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 8px 13px;
+
+    color: #4ADE80;
+    background: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+
+    border-radius: 30px;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+}
+
+.appeal-status.appeal-maintained {
+    color: var(--lavender);
+    background: rgba(167, 139, 250, 0.1);
+    border-color: rgba(167, 139, 250, 0.3);
+}
+
+
+/* REVISED VERDICT HEADING */
+
+.revised-verdict-card > h3 {
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 20px 0 12px;
+}
+
+.revised-verdict {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+
+    padding: 13px 18px;
+    margin: 15px 0;
+
+    font-size: clamp(17px, 3vw, 27px);
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+
+    border-radius: 11px;
+}
+
+.appeal-status-text {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 15px 0 25px;
+}
+
+
+/* REASSESSMENT AND QUESTION */
+
+.appeal-reasoning,
+.appeal-question {
+    margin-top: 18px;
+    padding: 23px;
+
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+}
+
+.appeal-reasoning {
+    border-left: 3px solid var(--purple);
+}
+
+.appeal-question {
+    border-left: 3px solid var(--purple-light);
+    background: rgba(118, 86, 232, 0.08);
+}
+
+.appeal-reasoning h4,
+.appeal-question h4 {
+    color: var(--lavender);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.appeal-reasoning p,
+.appeal-question p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+
+/* 12. ABOUT SECTION */
+
+.about-section {
+    padding: 90px 7%;
+    text-align: center;
+    background: var(--midnight);
+}
+
+.about-section > p:last-child {
+    max-width: 650px;
+    margin: 15px auto 0;
+
+    color: var(--muted);
+    font-size: 16px;
+}
+
+
+/* 13. FOOTER */
+
+footer {
+    padding: 25px 7%;
+    text-align: center;
+
+    background: #060B17;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* 14. RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .personas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .judge-card {
+        grid-column: 1 / -1;
+    }
+
+    .steps-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px 5%;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-button {
+        padding: 8px 13px;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding: 75px 7%;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .how-it-works,
+    .decision-section,
+    .courtroom-section,
+    .about-section {
+        padding: 65px 6%;
+    }
+
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+    .personas {
+        grid-template-columns: 1fr;
+    }
+
+    .judge-card {
+        grid-column: auto;
+    }
+
+    .persona-card {
+        padding: 22px;
+    }
+
+    #decision-form {
+        padding: 17px;
+    }
+
+    .appeal-section {
+        padding: 21px;
+    }
+
+    .revised-verdict-card {
+        padding: 21px;
+    }
+
+    .appeal-reasoning,
+    .appeal-question {
+        padding: 17px;
+    }
+
+    .appeal-heading h3 {
+        font-size: 19px;
+    }
+
+    #appeal-button {
+        width: 100%;
+    }
+
+}
+
+
+/* Full-width revised Judge section */
+#appeal-result {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.revised-verdict-card {
+    width: 100%;
+    max-width: none;
+    padding: 35px 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-top: 1px solid rgba(167, 139, 250, 0.35);
+}
+
+.revised-verdict-card h3 {
+    margin-bottom: 25px;
+    color: var(--lavender);
+}
+
+.revised-verdict-card .verdict-result {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.revised-verdict-card .judge-detail {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.revised-verdict-card .appeal-status-text {
+    color: var(--muted);
+    margin-top: 15px;
+}
+/* Make the entire appeal section full width */
+.appeal-section {
+    width: 100%;
+    max-width: none;
+    grid-column: 1 / -1;
+}
+
+/* Make the What Would Change This Verdict box full width */
+.change-box {
+    width: 100%;
+    max-width: none;
+    grid-column: 1 / -1;
+    box-sizing: border-box;
+}
+
+/* Make the list use the full available width */
+#verdict-changes {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Make the appeal result full width */
+#appeal-result {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+.revised-verdict-card {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+/* FINAL REFLECTION */
+
+.final-reflection,
+.final-result {
+    width: 100%;
+    max-width: none;
+    margin: 45px auto;
+    padding: 35px 0;
+    border-top: 1px solid rgba(167, 139, 250, 0.3);
+}
+
+.final-reflection[hidden],
+.final-result[hidden] {
+    display: none;
+}
+
+.final-reflection-heading,
+.final-result-heading {
+    margin-bottom: 25px;
+}
+
+.section-label {
+    color: var(--lavender);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.final-reflection-heading h2,
+.final-result-heading h2 {
+    color: var(--white);
+    margin: 12px 0;
+}
+
+.final-reflection-heading p,
+.final-result-heading p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.final-question-box,
+.final-detail {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 24px;
+    margin: 20px 0;
+    background: var(--navy);
+    border-left: 3px solid var(--purple);
+    border-radius: 10px;
+}
+
+.final-question-box h3,
+.final-detail h3 {
+    color: var(--lavender);
+    margin-bottom: 12px;
+}
+
+.final-question-box h3,
+.final-detail p {
+    line-height: 1.7;
+    color: var(--text);
+}
+
+#final-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#final-form label {
+    color: var(--white);
+    font-weight: 600;
+}
+
+#final-answer {
+    width: 100%;
+    min-height: 140px;
+    padding: 18px;
+    box-sizing: border-box;
+    resize: vertical;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 10px;
+    background: var(--navy);
+    color: var(--white);
+    font: inherit;
+}
+
+#final-answer:focus {
+    outline: none;
+    border-color: var(--purple-light);
+}
+
+#final-submit {
+    align-self: flex-start;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    background: var(--purple);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#final-submit:hover {
+    background: var(--purple-light);
+}
+
+#final-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.final-verdict-box {
+    padding: 28px;
+    margin: 25px 0;
+    background: var(--navy);
+    border-left: 4px solid var(--purple);
+    border-radius: 10px;
+}
+
+.final-verdict-box span {
+    color: var(--lavender);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.final-verdict-box h3 {
+    margin-top: 15px;
+    font-size: clamp(22px, 4vw, 32px);
+    color: var(--white);
+}
+
+.final-closing-message {
+    margin-top: 30px;
+    padding: 25px 0;
+    color: var(--lavender);
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}

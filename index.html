@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Verdict | AI Decision Courtroom</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                VERDICT<span>.</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About</a>
+            </div>
+
+            <a href="#decision" class="nav-button">
+                Start a Trial
+            </a>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+
+            <p class="tagline">
+                YOUR DECISIONS. PUT ON TRIAL.
+            </p>
+
+            <h1>
+                Every decision deserves
+                <span>a fair trial.</span>
+            </h1>
+
+            <p class="hero-description">
+                Big decisions are rarely simple.
+                Let AI perspectives challenge your thinking,
+                examine both sides, and help you see what
+                you might be missing.
+            </p>
+
+            <a href="#decision" class="primary-button">
+                Enter the Courtroom →
+            </a>
+
+        </section>
+<section id="how-it-works" class="how-it-works">
+    <p class="section-tag">THE PROCESS</p>
+    <h2>How Verdict Works</h2>
+    <p class="section-description">
+        Every decision deserves to be examined from more than one perspective.
+    </p>
+
+    <div class="steps-container">
+
+        <div class="step-card">
+            <span class="step-number">01</span>
+            <h3>Present Your Decision</h3>
+            <p>
+                Enter the decision you're struggling with.
+                Give Verdict the context it needs.
+            </p>
+        </div>
+
+        <div class="step-card">
+            <span class="step-number">02</span>
+            <h3>Hear Both Sides</h3>
+            <p>
+                Watch the Optimist, Skeptic, and Realist
+                examine your decision from different perspectives.
+            </p>
+        </div>
+
+        <div class="step-card">
+            <span class="step-number">03</span>
+            <h3>Receive Your Verdict</h3>
+            <p>
+                The Judge evaluates the arguments and delivers
+                a balanced verdict with reasoning.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+        <!-- DECISION INPUT -->
+        <section class="decision-section" id="decision">
+
+            <div class="section-heading">
+
+                <p class="tagline">THE COURT IS WAITING</p>
+
+                <h2>What decision are you facing?</h2>
+
+                <p>
+                    Describe the situation you're struggling with.
+                    Be as specific as you like.
+                </p>
+
+            </div>
+
+            <form id="decision-form">
+
+                <textarea
+                    id="decision-input"
+                    placeholder="Example: Should I study abroad or complete my degree locally?"
+                    required
+                ></textarea>
+
+                <button type="submit" class="primary-button">
+                    Put My Decision on Trial →
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- AI COURTROOM -->
+        <section class="courtroom-section" id="courtroom">
+
+            <div class="section-heading">
+
+                <p class="tagline">THE COURTROOM</p>
+
+                <h2>Your decision is on trial.</h2>
+
+                <p id="submitted-decision">
+                    Waiting for a decision...
+                </p>
+
+            </div>
+
+            <div class="personas">
+
+                <!-- OPTIMIST -->
+                <div class="persona-card">
+
+                    <div class="persona-icon">✦</div>
+
+                    <h3>The Optimist</h3>
+
+                    <p>
+                        Building the strongest case in favour.
+                    </p>
+
+                    <div
+                        class="persona-response"
+                        id="optimist-response">
+                    </div>
+
+                </div>
+
+
+                <!-- SKEPTIC -->
+                <div class="persona-card">
+
+                    <div class="persona-icon">⚖</div>
+
+                    <h3>The Skeptic</h3>
+
+                    <p>
+                        Challenging assumptions and identifying risks.
+                    </p>
+
+                    <div
+                        class="persona-response"
+                        id="skeptic-response">
+                    </div>
+
+                </div>
+
+
+                <!-- REALIST -->
+                <div class="persona-card">
+
+                    <div class="persona-icon">◈</div>
+
+                    <h3>The Realist</h3>
+
+                    <p>
+                        Examining practical consequences.
+                    </p>
+
+                    <div
+                        class="persona-response"
+                        id="realist-response">
+                    </div>
+
+                </div>
+
+
+                <!-- JUDGE -->
+                
+<div class="persona-card judge-card">
+
+    <div class="persona-heading">
+        <span class="persona-icon">♛</span>
+        <div>
+            <h3>The Judge</h3>
+            <p>Delivering the final verdict.</p>
+        </div>
+    </div>
+
+    <div id="judge-response">
+
+        <div class="verdict-result">
+            <p class="verdict-label">FINAL VERDICT</p>
+
+            <h2 id="verdict-decision">
+                Awaiting verdict...
+            </h2>
+        </div>
+
+        <div class="judge-detail">
+            <h4>⚖ Judge's Reasoning</h4>
+            <p id="judge-reasoning"></p>
+        </div>
+
+        <div class="judge-detail question-box">
+            <h4>✦ The Question You Haven't Asked</h4>
+            <p id="overlooked-question"></p>
+        </div>
+
+        <div class="confidence-section">
+            <div class="confidence-heading">
+                <h4>Decision Confidence</h4>
+                <span id="confidence-value">0%</span>
+            </div>
+
+            <div class="confidence-bar">
+                <div id="confidence-fill"></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="judge-detail change-box">
+
+    <h4>↗ What Would Change This Verdict?</h4>
+
+    <ul id="verdict-changes"></ul>
+
+</div>
+<!-- APPEAL ROUND -->
+<div class="appeal-section">
+
+    <div class="appeal-heading">
+        <span class="appeal-icon">⚖</span>
+        <h3>Challenge the Verdict</h3>
+    </div>
+
+    <p class="appeal-description">
+        Have new information? Think the Judge missed something?
+        Present your argument and request a reassessment.
+    </p>
+
+    <textarea
+        id="appeal-input"
+        placeholder="Tell the Judge what additional information could change this decision..."
+        rows="4"
+    ></textarea>
+
+    <button type="button" id="appeal-button">
+        Challenge the Verdict →
+    </button>
+
+    <div id="appeal-result"></div>
+<!-- FINAL REFLECTION -->
+<section id="final-reflection" class="final-reflection" hidden>
+
+    <div class="final-reflection-heading">
+        <span class="section-label">THE FINAL QUESTION</span>
+        <h2>Before the Trial Ends...</h2>
+        <p>
+            The Judge has reconsidered your decision.
+            Now, your answer to this final question will help
+            determine the final verdict.
+        </p>
+    </div>
+
+    <div class="final-question-box">
+        <h3 id="final-question"></h3>
+    </div>
+
+    <form id="final-form">
+
+        <label for="final-answer">
+            Your Answer
+        </label>
+
+        <textarea
+            id="final-answer"
+            placeholder="Take a moment to reflect and share your answer..."
+            maxlength="2000"
+            required
+        ></textarea>
+
+        <button type="submit" id="final-submit">
+            Deliver Final Verdict →
+        </button>
+
+    </form>
+
+</section>
+
+<!-- FINAL VERDICT RESULT -->
+<section id="final-result" class="final-result" hidden>
+
+    <div class="final-result-heading">
+        <span class="section-label">TRIAL CONCLUDED</span>
+        <h2>Final Verdict</h2>
+        <p>The Judge has reached the final conclusion.</p>
+    </div>
+
+    <div class="final-verdict-content">
+
+        <div class="final-verdict-box">
+            <span>FINAL DECISION</span>
+            <h3 id="final-verdict-decision"></h3>
+        </div>
+
+        <div class="final-detail">
+            <h3>Final Reasoning</h3>
+            <p id="final-reasoning"></p>
+        </div>
+
+        <div class="final-detail">
+            <h3>Your Next Step</h3>
+            <p id="final-next-step"></p>
+        </div>
+
+        <p id="final-closing-message" class="final-closing-message"></p>
+
+    </div>
+
+</section>
+</div>
+
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section" id="about">
+
+            <p class="tagline">THINK BEFORE YOU DECIDE</p>
+
+            <h2>Not another advice chatbot.</h2>
+
+            <p>
+                Verdict brings different perspectives together
+                so you can understand your choices before
+                making a decision.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            VERDICT. © 2026 | Every decision deserves a fair trial.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
